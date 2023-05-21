@@ -2,9 +2,11 @@
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { AwsCdkDemoStack } from '../lib/aws-cdk-demo-stack';
+import { S3Stack } from '../lib/aws-s3-stack';
+import { EcrStack }  from '../lib/aws-ecr-stack';
 
 const app = new cdk.App();
-new AwsCdkDemoStack(app, 'AwsCdkDemoStack', {
+// new AwsCdkDemoStack(app, 'AwsCdkDemoStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
@@ -18,4 +20,6 @@ new AwsCdkDemoStack(app, 'AwsCdkDemoStack', {
   // env: { account: '123456789012', region: 'us-east-1' },
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
-});
+// });
+const s3Bucket = new S3Stack(app, "s3BucketStack")
+const ecrRepository = new EcrStack(app,"awsEcr")
