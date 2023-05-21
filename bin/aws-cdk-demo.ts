@@ -4,6 +4,7 @@ import * as cdk from 'aws-cdk-lib';
 import { AwsCdkDemoStack } from '../lib/aws-cdk-demo-stack';
 import { S3Stack } from '../lib/aws-s3-stack';
 import { EcrStack }  from '../lib/aws-ecr-stack';
+import { FargateStack } from '../lib/aws-fargate-stack';
 
 const app = new cdk.App();
 // new AwsCdkDemoStack(app, 'AwsCdkDemoStack', {
@@ -23,3 +24,4 @@ const app = new cdk.App();
 // });
 const s3Bucket = new S3Stack(app, "s3BucketStack")
 const ecrRepository = new EcrStack(app,"awsEcr")
+const fargateStack = new FargateStack(app,"fargateApp")
