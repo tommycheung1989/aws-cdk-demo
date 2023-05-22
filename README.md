@@ -13,4 +13,5 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 * `cdk diff`        compare deployed stack with current state
 * `cdk synth`       emits the synthesized CloudFormation template
 
-added dockerfile for the backend service
+### Before deploy
+`cdk bootstrap aws://ACCOUNT-NUMBER-1/REGION-1` bootstrap your environment
